@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-tp-cream text-slate-800 font-sans antialiased;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(27, 91, 182, 0.08), transparent 55%),
+    radial-gradient(circle at 88% 20%, rgba(214, 49, 42, 0.06), transparent 55%),
+    radial-gradient(circle at 50% 90%, rgba(166, 124, 82, 0.07), transparent 60%);
+}
+
+::selection {
+  background: rgba(27, 91, 182, 0.20);
+  color: #134285;
+}
+
+.tp-section {
+  @apply max-w-6xl mx-auto px-5 sm:px-8;
+}
+
+.tp-eyebrow {
+  @apply uppercase tracking-[0.18em] text-xs font-semibold text-tp-blue;
+}
+
+.tp-card {
+  @apply bg-tp-paper rounded-2xl shadow-tp-card border border-stone-200/70;
+}
+
+.tp-btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold text-white
+    bg-tp-red hover:bg-tp-red-dark transition shadow-tp-soft focus:outline-none focus:ring-2
+    focus:ring-tp-red/40;
+}
+
+.tp-btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold
+    text-tp-blue-dark bg-white border border-tp-blue/30 hover:border-tp-blue/60 hover:bg-tp-blue/5
+    transition focus:outline-none focus:ring-2 focus:ring-tp-blue/30;
+}
+
+.tp-input {
+  @apply w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-slate-800
+    focus:border-tp-blue focus:ring-2 focus:ring-tp-blue/20 outline-none transition;
+}
+
+.tp-label {
+  @apply text-sm font-semibold text-slate-700 mb-1.5 inline-block;
+}
+
+.tp-progress-track {
+  @apply h-4 w-full rounded-full bg-stone-200 overflow-hidden;
+}
+
+.tp-progress-bar {
+  @apply h-full bg-gradient-to-r from-tp-red via-tp-red to-rose-500 rounded-full
+    transition-[width] duration-700 ease-out;
+}
+
+.tp-chip {
+  @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+}
+
+.canvas-shell {
+  background:
+    radial-gradient(circle at 30% 25%, #f5ebd8 0%, #e8d8b8 45%, #b9a079 100%);
+}
+
+@keyframes tp-pop {
+  0% { transform: scale(0.94); opacity: 0; }
+  60% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.tp-pop {
+  animation: tp-pop 320ms ease-out;
+}
